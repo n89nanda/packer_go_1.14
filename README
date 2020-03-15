@@ -1,0 +1,18 @@
+## Vagrant box with golang
+see[vagrant cloud](https://app.vagrantup.com/n89nanda/boxes/golang1.14)
+
+
+----
+## shell provisioners
+1. `sudo add-apt-repository ppa:longsleep/golang-backports`
+
+2.  `sudo apt-get -y update`
+
+3. `sudo apt-get -y install golang-go`
+
+----
+## publishing steps
+1. `vagrant up`
+2. `vagrant package --base <name> --output <box_name>.box`
+3. `vagrant cloud auth login`
+4. `vagrant cloud publish n89nanda/golang1.14 0.1.0 virtualbox golang.box`
